@@ -48,6 +48,20 @@ npm run dev
 ```
 Open the Vite URL, normally `http://localhost:5173`.
 
+## Deploy on Render
+
+The repository includes [`render.yaml`](./render.yaml) for deploying the API and frontend
+as separate Render services:
+
+- API service: `vyayanova-api`
+- Static frontend service: `vyayanova`
+
+In MongoDB Atlas, create the `vyayanova_db` database, allow the Render service to connect,
+and copy the generated connection string into the API service's `MONGODB_URI` environment
+variable. Set `JWT_SECRET` to a long random value and set `CLIENT_URL` to the deployed
+frontend URL. Set the frontend's `VITE_API_URL` to the deployed API URL followed by `/api`,
+for example `https://vyayanova-api.onrender.com/api`.
+
 ## API endpoints
 All transaction endpoints require `Authorization: Bearer <JWT>`.
 
