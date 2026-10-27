@@ -38,3 +38,7 @@ try {
     process.exit(1);
   });
 } catch (error) { console.error('MongoDB connection failed:', error.message); process.exit(1); }
+console.log("Environment variable check:", {
+  MONGODB_URI: Boolean(process.env.MONGODB_URI),
+  JWT_SECRET: Boolean(process.env.JWT_SECRET),
+});
