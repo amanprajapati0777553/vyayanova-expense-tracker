@@ -62,6 +62,17 @@ variable. Set `JWT_SECRET` to a long random value and set `CLIENT_URL` to the de
 frontend URL. Set the frontend's `VITE_API_URL` to the deployed API URL followed by `/api`,
 for example `https://vyayanova-api.onrender.com/api`.
 
+## Deploy frontend on Vercel
+
+This repository includes a root-level `vercel.json` so a Vercel project connected to the
+repository root builds the `frontend/` app automatically.
+
+- Frontend deploy target: Vercel (build output from `frontend/dist`)
+- Backend deploy target: Render (`backend/`, configured by `render.yaml`)
+
+Set `VITE_API_URL` in Vercel to your deployed backend API base URL ending with `/api`
+(for example `https://vyayanova-api.onrender.com/api`).
+
 ## API endpoints
 All transaction endpoints require `Authorization: Bearer <JWT>`.
 
